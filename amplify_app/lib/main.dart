@@ -1,66 +1,35 @@
+import 'package:amplify_app/amplifyconfiguration.dart';
+import 'package:amplify_app/app.dart';
+import 'package:amplify_app/models/ModelProvider.dart';
+import 'package:amplify_app/util/logger.dart';
+import 'package:amplify_app/util/provider_observer.dart';
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+import 'package:amplify_datastore/amplify_datastore.dart';
+import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+Future<void> initAmplify() async {
+  final auth = AmplifyAuthCognito();
+  final datastore = AmplifyDataStore(modelProvider: ModelProvider.instance);
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+  try {
+    await Amplify.addPlugins([auth, datastore]);
+    await Amplify.configure(amplifyconfig);
+  } on AmplifyAlreadyConfiguredException catch (e) {
+    Logger.showAmplifyException(e);
+  } on Exception catch (e) {
+    logger.info('error: $e');
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initAmplify();
+  runApp(
+    const ProviderScope(
+      observers: [ProviderLogger()],
+      child: App(),
+    ),
+  );
 }
