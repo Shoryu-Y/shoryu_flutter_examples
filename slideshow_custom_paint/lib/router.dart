@@ -8,6 +8,8 @@ import 'package:slideshow_custom_paint/ui/pages/examples/reference_image_page.da
 import 'package:slideshow_custom_paint/ui/pages/examples/slide_example_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/turn_page_transition_example_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/my_profile/career_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/my_profile/my_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/title_page.dart';
 import 'package:turn_page_transition/turn_page_transition.dart';
@@ -22,39 +24,48 @@ class _Router {
     routes: [
       GoRoute(
         path: TitlePage.routePath,
-        builder: (context, _) => const TitlePage(),
+        builder: (_, __) => const TitlePage(),
       ),
       GoRoute(
-        path: MyProfilePage.routePath,
-        builder: (context, _) => const MyProfilePage(),
-      ),
+          path: MyProfilePage.routePath,
+          builder: (_, __) => const MyProfilePage(),
+          routes: [
+            GoRoute(
+              path: MyPage.routePath,
+              builder: (_, __) => const MyPage(),
+            ),
+            GoRoute(
+              path: CareerPage.routePath,
+              builder: (_, __) => const CareerPage(),
+            ),
+          ]),
       GoRoute(
         path: GraphicsEnginePage.routePath,
-        builder: (context, _) => const GraphicsEnginePage(),
+        builder: (_, __) => const GraphicsEnginePage(),
       ),
       GoRoute(
         path: TreesPage.routePath,
-        builder: (context, _) => const TreesPage(),
+        builder: (_, __) => const TreesPage(),
       ),
       GoRoute(
         path: CustomPaintPage.routePath,
-        builder: (context, _) => const CustomPaintPage(),
+        builder: (_, __) => const CustomPaintPage(),
       ),
       GoRoute(
         path: ExamplesPage.routePath,
-        builder: (context, _) => const ExamplesPage(),
+        builder: (_, __) => const ExamplesPage(),
         routes: [
           GoRoute(
             path: SlideExamplePage.routePath,
-            builder: (context, _) => const SlideExamplePage(),
+            builder: (_, __) => const SlideExamplePage(),
           ),
           GoRoute(
             path: ReferenceImagePage.routePath,
-            builder: (context, _) => const ReferenceImagePage(),
+            builder: (_, __) => const ReferenceImagePage(),
           ),
           GoRoute(
             path: TurnPageTransitionExamplePage.routePath,
-            pageBuilder: (context, _) => CustomTransitionPage(
+            pageBuilder: (_, __) => CustomTransitionPage(
               child: const TurnPageTransitionExamplePage(),
               transitionsBuilder: (
                 context,
