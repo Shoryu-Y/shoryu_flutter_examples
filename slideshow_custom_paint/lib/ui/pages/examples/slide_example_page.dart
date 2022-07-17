@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/examples/reference_image_page.dart';
 import 'package:slideshow_custom_paint/ui/widget/pages/body.dart';
 
 class SlideExamplePage extends StatelessWidget {
@@ -10,7 +12,12 @@ class SlideExamplePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Body(
       subject: 'Example',
-      onPressed: () {},
+      onPressed: () {
+        ExamplesPage.pushSubRoute(
+          context,
+          subRoute: ReferenceImagePage.routePath,
+        );
+      },
       child: const SizedBox(),
     );
   }

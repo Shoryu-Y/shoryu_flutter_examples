@@ -19,6 +19,7 @@ class Body extends StatelessWidget {
     return Slide(
       onPressed: onPressed,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),

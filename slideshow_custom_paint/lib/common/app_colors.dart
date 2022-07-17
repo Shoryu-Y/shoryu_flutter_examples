@@ -26,4 +26,6 @@ class AppColors {
       Color(0xFF0088e0),
     ],
   );
+
+  static const overLeafColor = Color(0xFF8e7cc3);
 }

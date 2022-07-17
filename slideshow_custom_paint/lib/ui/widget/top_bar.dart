@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:slideshow_custom_paint/ui/pages/Trees/trees_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/my_profile_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_page.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key, required this.showGetStarted});
@@ -24,15 +27,15 @@ class TopBar extends StatelessWidget {
           ),
           const _IndexTextButton(
             title: 'GraphicsEngine',
-            path: MyProfilePage.routePath,
+            path: GraphicsEnginePage.routePath,
           ),
           const _IndexTextButton(
             title: 'Trees',
-            path: MyProfilePage.routePath,
+            path: TreesPage.routePath,
           ),
           const _IndexTextButton(
             title: 'CustomPaint',
-            path: MyProfilePage.routePath,
+            path: CustomPaintPage.routePath,
           ),
           const _IndexTextButton(
             title: 'Examples',

@@ -7,6 +7,7 @@ class ExamplesPage extends StatelessWidget {
   const ExamplesPage({super.key});
 
   static const routePath = '/examples';
+  static const subjectName = 'Examples';
 
   static void pushSubRoute(BuildContext context, {required String subRoute}) {
     context.push('$routePath/$subRoute');
@@ -15,7 +16,7 @@ class ExamplesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Subject(
-      subject: 'Examples',
+      subject: subjectName,
       onPressed: () {
         pushSubRoute(context, subRoute: SlideExamplePage.routePath);
       },
