@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
 import 'package:slideshow_custom_paint/ui/widget/pages/body.dart';
-import 'package:slideshow_custom_paint/ui/widget/pages/subject.dart';
 
 class TurnPageTransitionExamplePage extends StatelessWidget {
   const TurnPageTransitionExamplePage({super.key});
@@ -19,7 +18,7 @@ class TurnPageTransitionExamplePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              'Turn Page Transition',
+              'turn_page_transition',
               style: Theme.of(context).textTheme.headline1,
             ),
             Text(

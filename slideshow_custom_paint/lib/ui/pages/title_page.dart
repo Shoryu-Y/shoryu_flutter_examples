@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slideshow_custom_paint/ui/widget/slide.dart';
+import 'package:slideshow_custom_paint/ui/widget/custom_paint/slide.dart';
 
 class TitlePage extends StatelessWidget {
   const TitlePage({super.key});

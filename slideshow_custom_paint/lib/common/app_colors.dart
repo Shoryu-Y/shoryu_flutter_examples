@@ -28,4 +28,8 @@ class AppColors {
   );
 
   static const overLeafColor = Color(0xFF8e7cc3);
+
+  static const blue1 = Color(0xFF4a86e8);
+  static const blue2 = Color(0xFFa1c3ff);
+  static const blue3 = Color(0xFF9ad7ff);
 }

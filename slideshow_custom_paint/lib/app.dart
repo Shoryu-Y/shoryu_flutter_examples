@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:slideshow_custom_paint/common/app_colors.dart';
 import 'package:slideshow_custom_paint/router.dart';
 import 'package:slideshow_custom_paint/ui/pages/title_page.dart';
+import 'package:turn_page_transition/turn_page_transition.dart';
 
 class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);

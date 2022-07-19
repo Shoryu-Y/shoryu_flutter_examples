@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/turn_page_transition_example_page.dart';
-import 'package:slideshow_custom_paint/ui/widget/image_paint.dart';
-import 'package:slideshow_custom_paint/ui/widget/slide.dart';
+import 'package:slideshow_custom_paint/ui/widget/custom_paint/image_paint.dart';
+import 'package:slideshow_custom_paint/ui/widget/custom_paint/slide.dart';
 
 class ReferenceImagePage extends StatelessWidget {
   const ReferenceImagePage({super.key});
