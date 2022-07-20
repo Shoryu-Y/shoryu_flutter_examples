@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/slide.dart';
 
-class Body extends StatelessWidget {
-  const Body({
+class Screen extends StatelessWidget {
+  const Screen({
     super.key,
     required this.subject,
     required this.onPressed,
@@ -25,7 +24,10 @@ class Body extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             child: Text(subject, style: Theme.of(context).textTheme.headline3,),
           ),
-          Expanded(child: child),
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: child,
+          )),
         ],
       ),
     );

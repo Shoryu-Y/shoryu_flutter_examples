@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
-import 'package:slideshow_custom_paint/ui/widget/pages/body.dart';
+import 'package:slideshow_custom_paint/ui/pages/examples/examples_subject_page.dart';
+import 'package:slideshow_custom_paint/ui/widget/view/body_view.dart';
 
 class TurnPageTransitionExamplePage extends StatelessWidget {
   const TurnPageTransitionExamplePage({super.key});
@@ -9,8 +9,8 @@ class TurnPageTransitionExamplePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Body(
-      subject: ExamplesPage.subjectName,
+    return BodyView(
+      subject: ExamplesSubjectPage.subjectName,
       onPressed: () {},
       child: Center(
         child: Column(

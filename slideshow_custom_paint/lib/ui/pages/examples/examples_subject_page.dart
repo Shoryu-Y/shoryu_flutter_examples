@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/slide_example_page.dart';
-import 'package:slideshow_custom_paint/ui/widget/pages/subject.dart';
+import 'package:slideshow_custom_paint/ui/widget/templete/subject_screem.dart';
 
-class ExamplesPage extends StatelessWidget {
-  const ExamplesPage({super.key});
+class ExamplesSubjectPage extends StatelessWidget {
+  const ExamplesSubjectPage({super.key});
 
   static const routePath = '/examples';
   static const subjectName = 'Examples';
@@ -15,7 +15,7 @@ class ExamplesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Subject(
+    return SubjectScreen(
       subject: subjectName,
       onPressed: () {
         pushSubRoute(context, subRoute: SlideExamplePage.routePath);

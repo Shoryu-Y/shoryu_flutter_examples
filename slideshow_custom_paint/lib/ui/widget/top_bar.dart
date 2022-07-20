@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:slideshow_custom_paint/ui/pages/Trees/trees_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/Trees/trees_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/examples/examples_subject_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_subject_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_subject_page.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key, required this.showGetStarted});
@@ -23,15 +23,15 @@ class TopBar extends StatelessWidget {
         children: [
           const _IndexTextButton(
             title: 'MyProfile',
-            path: MyProfilePage.routePath,
+            path: MyProfileSubjectPage.routePath,
           ),
           const _IndexTextButton(
             title: 'GraphicsEngine',
-            path: GraphicsEnginePage.routePath,
+            path: GraphicsEngineSubjectPage.routePath,
           ),
           const _IndexTextButton(
             title: 'Trees',
-            path: TreesPage.routePath,
+            path: TreesSubjectPage.routePath,
           ),
           const _IndexTextButton(
             title: 'CustomPaint',
@@ -39,7 +39,7 @@ class TopBar extends StatelessWidget {
           ),
           const _IndexTextButton(
             title: 'Examples',
-            path: ExamplesPage.routePath,
+            path: ExamplesSubjectPage.routePath,
           ),
           if (showGetStarted)
             Padding(
@@ -58,7 +58,7 @@ class TopBar extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  GoRouter.of(context).go(MyProfilePage.routePath);
+                  GoRouter.of(context).go(MyProfileSubjectPage.routePath);
                 },
                 child: Text(
                   'Get started',

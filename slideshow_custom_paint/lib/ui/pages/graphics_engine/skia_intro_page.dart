@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/graphics_engine/skia_detail_page.dart';
-import 'package:slideshow_custom_paint/ui/widget/pages/body.dart';
+import 'package:slideshow_custom_paint/ui/widget/templete/screen.dart';
 
-class SkiaPage extends StatelessWidget {
-  const SkiaPage({super.key});
+class SkiaIntroPage extends StatelessWidget {
+  const SkiaIntroPage({super.key});
 
-  static const routePath = 'skia';
+  static const routePath = 'skia_introduction';
 
   @override
   Widget build(BuildContext context) {
-    return Body(
-      subject: GraphicsEnginePage.subjectName,
+    return Screen(
+      subject: GraphicsEngineSubjectPage.subjectName,
       onPressed: () {
-        GraphicsEnginePage.pushSubRoute(
+        GraphicsEngineSubjectPage.pushSubRoute(
           context,
           subRoute: SkiaDetailPage.routePath,
         );

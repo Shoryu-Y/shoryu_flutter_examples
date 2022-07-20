@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/examples/examples_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/turn_page_transition_example_page.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/image_paint.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/slide.dart';
@@ -13,7 +13,7 @@ class ReferenceImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Slide(
       onPressed: () {
-        ExamplesPage.pushSubRoute(
+        ExamplesSubjectPage.pushSubRoute(
           context,
           subRoute: TurnPageTransitionExamplePage.routePath,
         );
@@ -38,7 +38,7 @@ class ReferenceImagePage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 child: Text(
-                  ExamplesPage.subjectName,
+                  ExamplesSubjectPage.subjectName,
                   style: Theme.of(context).textTheme.headline3,
                 ),
               ),

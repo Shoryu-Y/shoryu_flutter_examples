@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/slide.dart';
 
-class Subject extends StatelessWidget {
-  const Subject({super.key, required this.subject, required this.onPressed});
+class SubjectScreen extends StatelessWidget {
+  const SubjectScreen({super.key, required this.subject, required this.onPressed});
 
   final String subject;
   final VoidCallback onPressed;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_implement_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_page.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/frame_box.dart';
-import 'package:slideshow_custom_paint/ui/widget/pages/body.dart';
+import 'package:slideshow_custom_paint/ui/widget/view/body_view.dart';
 
 class CustomPaintRolePage extends StatelessWidget {
   const CustomPaintRolePage({super.key});
@@ -11,7 +11,7 @@ class CustomPaintRolePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Body(
+    return BodyView(
       subject: CustomPaintPage.subjectName,
       onPressed: () {
         CustomPaintPage.pushSubRoute(

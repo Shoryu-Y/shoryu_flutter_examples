@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:slideshow_custom_paint/ui/pages/graphics_engine/platforms_page.dart';
-import 'package:slideshow_custom_paint/ui/widget/pages/subject.dart';
+import 'package:slideshow_custom_paint/ui/widget/templete/subject_screem.dart';
 
-class GraphicsEnginePage extends StatelessWidget {
-  const GraphicsEnginePage({super.key});
+class GraphicsEngineSubjectPage extends StatelessWidget {
+  const GraphicsEngineSubjectPage({super.key});
 
   static const routePath = '/graphics_engine';
   static const subjectName = 'Graphics Engine';
@@ -15,7 +15,7 @@ class GraphicsEnginePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Subject(
+    return SubjectScreen(
       subject: subjectName,
       onPressed: () {
         pushSubRoute(context, subRoute: PlatformsPage.routePath);

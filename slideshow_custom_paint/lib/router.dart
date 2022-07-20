@@ -3,22 +3,22 @@ import 'package:go_router/go_router.dart';
 import 'package:slideshow_custom_paint/common/app_colors.dart';
 import 'package:slideshow_custom_paint/ui/pages/Trees/trees_detail_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/Trees/trees_figure_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/Trees/trees_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/Trees/trees_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_implement_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_role_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_painter_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/examples/examples_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/examples/examples_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/reference_image_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/slide_example_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/turn_page_transition_example_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/graphics_engine/graphics_engine_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/graphics_engine/platforms_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/graphics_engine/skia_detail_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/graphics_engine/skia_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/graphics_engine/skia_intro_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/my_profile/career_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/my_profile/my_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/title_page.dart';
 import 'package:turn_page_transition/turn_page_transition.dart';
 
@@ -35,12 +35,12 @@ class _Router {
         builder: (_, __) => const TitlePage(),
       ),
       GoRoute(
-        path: MyProfilePage.routePath,
-        builder: (_, __) => const MyProfilePage(),
+        path: MyProfileSubjectPage.routePath,
+        builder: (_, __) => const MyProfileSubjectPage(),
         routes: [
           GoRoute(
-            path: MyPage.routePath,
-            builder: (_, __) => const MyPage(),
+            path: MyProfilePage.routePath,
+            builder: (_, __) => const MyProfilePage(),
           ),
           GoRoute(
             path: CareerPage.routePath,
@@ -49,16 +49,16 @@ class _Router {
         ],
       ),
       GoRoute(
-        path: GraphicsEnginePage.routePath,
-        builder: (_, __) => const GraphicsEnginePage(),
+        path: GraphicsEngineSubjectPage.routePath,
+        builder: (_, __) => const GraphicsEngineSubjectPage(),
         routes: [
           GoRoute(
             path: PlatformsPage.routePath,
             builder: (_, __) => const PlatformsPage(),
           ),
           GoRoute(
-            path: SkiaPage.routePath,
-            builder: (_, __) => const SkiaPage(),
+            path: SkiaIntroPage.routePath,
+            builder: (_, __) => const SkiaIntroPage(),
           ),
           GoRoute(
             path: SkiaDetailPage.routePath,
@@ -67,8 +67,8 @@ class _Router {
         ],
       ),
       GoRoute(
-        path: TreesPage.routePath,
-        builder: (_, __) => const TreesPage(),
+        path: TreesSubjectPage.routePath,
+        builder: (_, __) => const TreesSubjectPage(),
         routes: [
           GoRoute(
             path: TreesDetailPage.routePath,
@@ -99,8 +99,8 @@ class _Router {
         ],
       ),
       GoRoute(
-        path: ExamplesPage.routePath,
-        builder: (_, __) => const ExamplesPage(),
+        path: ExamplesSubjectPage.routePath,
+        builder: (_, __) => const ExamplesSubjectPage(),
         routes: [
           GoRoute(
             path: SlideExamplePage.routePath,
