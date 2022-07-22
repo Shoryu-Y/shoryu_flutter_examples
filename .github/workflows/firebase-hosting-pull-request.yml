@@ -3,15 +3,16 @@
 
 name: Deploy to Firebase Hosting on PR
 'on': pull_request
+defaults:
+  run: 
+    working-directory: slideshow_custom_paint
+
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Move
-        run:
-          working-directory: slideshow_custom_paint
       - name: Install Flutter
         run: git clone https://github.com/flutter/flutter.git
       - name: Add path
