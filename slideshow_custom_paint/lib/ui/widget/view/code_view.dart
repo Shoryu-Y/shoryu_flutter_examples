@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CodeView extends StatelessWidget {
-  const CodeView({super.key, required this.code});
+  const CodeView({super.key, required this.code, this.style});
 
   final String code;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,8 @@ class CodeView extends StatelessWidget {
       ),
       child: Text(
         code,
-        style: Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 30),
+        style: style ??
+            Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 30),
       ),
     );
   }

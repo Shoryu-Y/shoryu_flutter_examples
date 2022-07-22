@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_painter_page.dart';
 import 'package:slideshow_custom_paint/ui/widget/templete/split_screen.dart';
 import 'package:slideshow_custom_paint/ui/widget/view/code_view.dart';
@@ -12,9 +12,9 @@ class ImplementPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplitScreen(
-      subject: CustomPaintPage.subjectName,
+      subject: CustomPaintSubjectPage.subjectName,
       onPressed: () {
-        CustomPaintPage.pushSubRoute(
+        CustomPaintSubjectPage.pushSubRoute(
           context,
           subRoute: CustomPainterPage.routePath,
         );

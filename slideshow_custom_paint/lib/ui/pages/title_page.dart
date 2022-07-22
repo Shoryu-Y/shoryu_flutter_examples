@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/slide.dart';
 
 class TitlePage extends StatelessWidget {
@@ -9,7 +11,9 @@ class TitlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slide(
-      showGetStarted: true,
+      onPressed: () {
+        context.go(MyProfileSubjectPage.routePath);
+      },
       child: Stack(
         children: [
           Center(

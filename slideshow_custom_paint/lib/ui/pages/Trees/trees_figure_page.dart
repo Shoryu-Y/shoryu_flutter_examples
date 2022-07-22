@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:slideshow_custom_paint/common/app_colors.dart';
 import 'package:slideshow_custom_paint/ui/pages/Trees/trees_subject_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/arrow_down.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/arrow_left.dart';
 import 'package:slideshow_custom_paint/ui/widget/custom_paint/arrow_right.dart';
@@ -18,7 +18,7 @@ class TreesFigurePage extends StatelessWidget {
     return BodyView(
       subject: TreesSubjectPage.subjectName,
       onPressed: () {
-        context.go(CustomPaintPage.routePath);
+        context.go(CustomPaintSubjectPage.routePath);
       },
       child: Center(
         child: Column(

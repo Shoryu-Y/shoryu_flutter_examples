@@ -36,16 +36,11 @@ class _ImagePaintState extends State<ImagePaint> {
           src = rect;
         });
       });
-
-      await Future<void>.delayed(const Duration(seconds: 5));
-      print('elapsed 5s');
-      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    print('！！！！！Rebuild！！！！！');
     final image = this.image;
     final src = this.src;
 
@@ -76,7 +71,6 @@ class _ImagePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print('？？？？？Repaint？？？？？');
     final paint = Paint()..style = PaintingStyle.fill;
 
     /// 画像を描写する画面の範囲をRectで渡す

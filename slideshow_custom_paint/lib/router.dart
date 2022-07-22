@@ -5,9 +5,11 @@ import 'package:slideshow_custom_paint/ui/pages/Trees/trees_detail_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/Trees/trees_figure_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/Trees/trees_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_implement_page.dart';
-import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_role_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_paint_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/custom_paint/custom_painter_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/custom_paint/draw_rect_page.dart';
+import 'package:slideshow_custom_paint/ui/pages/custom_paint/draw_path_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/examples_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/reference_image_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/examples/slide_example_page.dart';
@@ -81,8 +83,8 @@ class _Router {
         ],
       ),
       GoRoute(
-        path: CustomPaintPage.routePath,
-        builder: (_, __) => const CustomPaintPage(),
+        path: CustomPaintSubjectPage.routePath,
+        builder: (_, __) => const CustomPaintSubjectPage(),
         routes: [
           GoRoute(
             path: CustomPaintRolePage.routePath,
@@ -95,6 +97,14 @@ class _Router {
           GoRoute(
             path: CustomPainterPage.routePath,
             builder: (_, __) => const CustomPainterPage(),
+          ),
+          GoRoute(
+            path: DrawRectPage.routePath,
+            builder: (_, __) => const DrawRectPage(),
+          ),
+          GoRoute(
+            path: DrawPathPage.routePath,
+            builder: (_, __) => const DrawPathPage(),
           ),
         ],
       ),

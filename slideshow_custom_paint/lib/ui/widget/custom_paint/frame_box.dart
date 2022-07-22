@@ -45,7 +45,6 @@ class _FramePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print('repaint');
     final width = size.width;
     final height = size.height;
 

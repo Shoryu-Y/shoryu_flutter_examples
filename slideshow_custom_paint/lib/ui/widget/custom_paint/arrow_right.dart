@@ -6,12 +6,14 @@ class ArrowRight extends StatelessWidget {
     super.key,
     this.length,
     this.height,
+    this.color,
     this.lineStroke,
     this.lineLengthRate,
   });
 
   final double? length;
   final double? height;
+  final Color? color;
   final double? lineStroke;
   final double? lineLengthRate;
 
@@ -26,14 +28,23 @@ class ArrowRight extends StatelessWidget {
 
     return CustomPaint(
       size: Size(length, height),
-      foregroundPainter: _RightArrowPainter(lineLengthRate, lineStrokeRate),
+      foregroundPainter: _RightArrowPainter(
+        color ?? AppColors.overLeafColor,
+        lineLengthRate,
+        lineStrokeRate,
+      ),
     );
   }
 }
 
 class _RightArrowPainter extends CustomPainter {
-  const _RightArrowPainter(this.lineLengthRate, this.lineStrokeRate);
+  const _RightArrowPainter(
+    this.color,
+    this.lineLengthRate,
+    this.lineStrokeRate,
+  );
 
+  final Color color;
   final double lineLengthRate;
   final double lineStrokeRate;
 
@@ -44,9 +55,9 @@ class _RightArrowPainter extends CustomPainter {
 
     final stroke = 0.5 - lineStrokeRate / 2;
 
-    final arrowTop = Offset(width, height / 2);
-    final arrowBottomTop = Offset(width * lineLengthRate, 0);
-    final arrowBottomBottom = Offset(width * lineLengthRate, height);
+    final arrowVertex = Offset(width, height / 2);
+    final arrowBaseTop = Offset(width * lineLengthRate, 0);
+    final arrowBaseBottom = Offset(width * lineLengthRate, height);
     final lineTopRight = Offset(width * lineLengthRate, height * stroke);
     final lineTopLeft = Offset(0, height * stroke);
     final lineBottomLeft = Offset(0, height * (1 - stroke));
@@ -59,17 +70,17 @@ class _RightArrowPainter extends CustomPainter {
       ..strokeWidth = 2;
 
     final fillPaint = Paint()
-      ..color = AppColors.overLeafColor
+      ..color = color
       ..style = PaintingStyle.fill;
 
     final path = Path()
-      ..moveTo(arrowTop.dx, arrowTop.dy)
-      ..lineTo(arrowBottomTop.dx, arrowBottomTop.dy)
+      ..moveTo(arrowVertex.dx, arrowVertex.dy)
+      ..lineTo(arrowBaseTop.dx, arrowBaseTop.dy)
       ..lineTo(lineTopRight.dx, lineTopRight.dy)
       ..lineTo(lineTopLeft.dx, lineTopLeft.dy)
       ..lineTo(lineBottomLeft.dx, lineBottomLeft.dy)
       ..lineTo(lineBottomRight.dx, lineBottomRight.dy)
-      ..lineTo(arrowBottomBottom.dx, arrowBottomBottom.dy)
+      ..lineTo(arrowBaseBottom.dx, arrowBaseBottom.dy)
       ..close();
 
     canvas
