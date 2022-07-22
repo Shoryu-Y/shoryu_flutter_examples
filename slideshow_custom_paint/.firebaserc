@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "shoryu-dev",
+    "shoryu-dev": "shoryu-dev"
+  },
+  "targets": {},
+  "etags": {}
+}
