@@ -22,6 +22,7 @@ import 'package:slideshow_custom_paint/ui/pages/my_profile/career_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/my_profile/my_profile_subject_page.dart';
 import 'package:slideshow_custom_paint/ui/pages/title_page.dart';
+import 'package:slideshow_custom_paint/ui/thanks_page.dart';
 import 'package:turn_page_transition/turn_page_transition.dart';
 
 final routerProvider = Provider((ref) => _Router.router);
@@ -138,6 +139,10 @@ class _Router {
             ),
           ),
         ],
+      ),
+      GoRoute(
+        path: ThanksPage.routePath,
+        builder: (_, __) => const ThanksPage(),
       ),
     ],
     debugLogDiagnostics: true,
