@@ -44,9 +44,9 @@ class _RightArrowPainter extends CustomPainter {
 
     final stroke = 0.5 - lineStrokeRate / 2;
 
-    final arrowTop = Offset(0, height / 2);
-    final arrowBottomTop = Offset(width * (1 - lineLengthRate), 0);
-    final arrowBottomBottom = Offset(width * (1 - lineLengthRate), height);
+    final arrowVertex = Offset(0, height / 2);
+    final arrowBaseTop = Offset(width * (1 - lineLengthRate), 0);
+    final arrowBaseBottom = Offset(width * (1 - lineLengthRate), height);
     final lineTopRight = Offset(width * (1 - lineLengthRate), height * stroke);
     final lineTopLeft = Offset(width, height * stroke);
     final lineBottomLeft = Offset(width, height * (1 - stroke));
@@ -63,13 +63,13 @@ class _RightArrowPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     final path = Path()
-      ..moveTo(arrowTop.dx, arrowTop.dy)
-      ..lineTo(arrowBottomTop.dx, arrowBottomTop.dy)
+      ..moveTo(arrowVertex.dx, arrowVertex.dy)
+      ..lineTo(arrowBaseTop.dx, arrowBaseTop.dy)
       ..lineTo(lineTopRight.dx, lineTopRight.dy)
       ..lineTo(lineTopLeft.dx, lineTopLeft.dy)
       ..lineTo(lineBottomLeft.dx, lineBottomLeft.dy)
       ..lineTo(lineBottomRight.dx, lineBottomRight.dy)
-      ..lineTo(arrowBottomBottom.dx, arrowBottomBottom.dy)
+      ..lineTo(arrowBaseBottom.dx, arrowBaseBottom.dy)
       ..close();
 
     canvas

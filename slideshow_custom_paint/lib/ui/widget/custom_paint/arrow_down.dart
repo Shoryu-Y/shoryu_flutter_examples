@@ -43,8 +43,8 @@ class _DownArrowPainter extends CustomPainter {
 
     final stroke = 0.5 - lineStrokeRate / 2;
 
-    final arrowTop = Offset(width / 2, height);
-    final arrowBottomLeft = Offset(0, height * lineLengthRate);
+    final arrowVertex = Offset(width / 2, height);
+    final arrowBaseLeft = Offset(0, height * lineLengthRate);
     final arrowBottomRight = Offset(width, height * lineLengthRate);
     final lineTopLeft = Offset(width * stroke, 0);
     final lineTopRight = Offset(width * (1 - stroke), 0);
@@ -62,8 +62,8 @@ class _DownArrowPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     final path = Path()
-      ..moveTo(arrowTop.dx, arrowTop.dy)
-      ..lineTo(arrowBottomLeft.dx, arrowBottomLeft.dy)
+      ..moveTo(arrowVertex.dx, arrowVertex.dy)
+      ..lineTo(arrowBaseLeft.dx, arrowBaseLeft.dy)
       ..lineTo(lineBottomLeft.dx, lineBottomLeft.dy)
       ..lineTo(lineTopLeft.dx, lineTopLeft.dy)
       ..lineTo(lineTopRight.dx, lineTopRight.dy)

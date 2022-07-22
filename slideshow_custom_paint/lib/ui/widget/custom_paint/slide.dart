@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:slideshow_custom_paint/common/app_colors.dart';
 import 'package:slideshow_custom_paint/ui/widget/top_bar.dart';
@@ -7,12 +9,10 @@ class Slide extends StatelessWidget {
     super.key,
     this.onPressed,
     required this.child,
-    this.showGetStarted = false,
   });
 
   final VoidCallback? onPressed;
   final Widget child;
-  final bool showGetStarted;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class Slide extends StatelessWidget {
               child: Stack(
                 children: [
                   child,
-                  TopBar(showGetStarted: showGetStarted),
+                  const TopBar(),
                 ],
               ),
             );
@@ -86,6 +86,7 @@ class SlidePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(SlidePainter oldDelegate) {
+    print('should');
     return false;
   }
 }
